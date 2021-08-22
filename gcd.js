@@ -1,5 +1,5 @@
 function gcd(num1, num2) {
-	if (!num1 || !num2) return "please add two numeric arguments to the command";
+	if (!num1 || !num2) return "Please add two numeric arguments to the command";
 
 	let multiplier = Math.floor(num1 / num2);
 	let remainder = num1 % num2;
@@ -9,9 +9,14 @@ function gcd(num1, num2) {
 }
 
 function gcd_table(num1, num2) {
-	if (!num1 || !num2) return "please add two numeric arguments to the command";
+	if (!num1 || !num2) return "Please add two numeric arguments to the command";
 
-	let table = [["si", 1, 0], ["ti", 0, 1], ["ri", num1, num2], ["qi", null, null]];
+	let table = [
+		["si", 1, 0],
+		["ti", 0, 1],
+		["ri", num1, num2],
+		["qi", null, null]
+	];
 
 	// fill out all the ri's and qi's first
 	let ri_pos = 2;
@@ -28,7 +33,7 @@ function gcd_table(num1, num2) {
 		ri_pos++; // add to ri_pos to move to next row
 	}
 
-	return table;	
+	return table;
 }
 
 let display_current = process.argv[4] == "-d" || process.argv[5] == "-d" ? true : false;
@@ -56,3 +61,8 @@ function print_array(array) {
 		process.stdout.write("\n");
 	}
 }
+
+module.exports = {
+	gcd,
+	gcd_table
+};
