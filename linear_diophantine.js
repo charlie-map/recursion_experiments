@@ -12,7 +12,7 @@ console.log = log_buffer;
 
 // check for an input on k, which alters output
 let k = arguments_finderNUMB("k");
-k = k ? k : Math.floor(Math.random() * 30);
+k = !Number.isNaN(k) ? k : Math.floor(Math.random() * 30);
 
 // check for an input for scaling the range of the tested numbers
 let scale_factor = arguments_finderNUMB("s");
@@ -65,7 +65,7 @@ function find_all_solutions(equation) {
 
 	// returning the actual equations instead:
 	if (solution_type_free == 2)
-		return `x = ${s} + k * (${b} / gcd(${a}, ${b})) = ${s} + ${(b / d)}k\ny = ${t} + k * (${a} / gcd(${a}, ${b})) = ${t} + ${(a / d)}k\n`;
+		return `x = ${s} + k * (${b} / gcd(${a}, ${b})) = ${s} + ${(b / d)}k\ny = ${t} - k * (${a} / gcd(${a}, ${b})) = ${t} - ${(a / d)}k\n`;
 
 	return "x = " + (s + k * (b / d)) + ", y = " + (t - k * (a / d)) + "\n";
 }
