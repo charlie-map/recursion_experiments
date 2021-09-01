@@ -68,5 +68,11 @@ module.exports = {
 					return initial_object;
 			}
 		}
+	},
+	// takes an object (say, {'0': 34, '1': 34, '2': {'0': 348}})
+	// and gives back the string
+	// ({34, 34, {348}})
+	convert_toString: function() {
+
 	}
 }
